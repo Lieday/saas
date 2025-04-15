@@ -27,25 +27,26 @@ SECRET_KEY =config("DJANGO_SECRET_KEY")
 #DEBUG = str(os.environ.get("DJANGO_DEBUG")).lower() == "true"
 #DEBUG = config("DJANGO_DEBUG", cast=bool)
 #DEBUG = config("DJANGO_DEBUG", cast=bool)
+#DEBUG  = True
 DEBUG = config("DEBUG", default=False, cast=bool)
-
 #print("DEBUG ", DEBUG, type(DEBUG))
 #print("DJANGO_DEBUG raw:", config("DJANGO_DEBUG"))
 
 
 
-ALLOWED_HOSTS = [
-    ".railway.app" #https://saas.prod.railway.app
-]
-if DEBUG:
-    ALLOWED_HOSTS +=[
+ALLOWED_HOSTS = [".railway.app","127.0.0.1",
+        "localhost"]
+
+"""if DEBUG:
+    ALLOWED_HOSTS += [
         "127.0.0.1",
-        "local host"
+        "localhost"
     ]
 else:
     ALLOWED_HOSTS += [
         ".railway.app"
-    ]
+    ]"""
+
 print("DEBUG:", DEBUG)
 print("ALLOWED_HOSTS:", ALLOWED_HOSTS)
 
