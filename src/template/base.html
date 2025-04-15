@@ -6,11 +6,17 @@
     <title>    {% block title %}
         SaaS
         {% endblock title %}</title>
+        {% include 'base/css.html' %}
+
+
 </head>
 <body>
+    {% include 'nav/navbar.html' %}
     <h1> This page number one -1- </h1>
+    
     {% block content %}
     bloack
     {% endblock content %}
+    {% include 'base/js.html' %}
 </body>
 </html>

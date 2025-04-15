@@ -16,10 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import home_views , about_views
+from .views import home_views, about_views
+
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
-    path('1',home_views), #index -> homepage
-    path('about/',about_views),
-    path('Hello_world/',home_views),
+    path('1', home_views),
+    path('about/', about_views),
+    path('Hello_world/', home_views),
     path('admin/', admin.site.urls),
 ]
+
+# Ajoute ça pour que Django serve les fichiers statiques en dev
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])
