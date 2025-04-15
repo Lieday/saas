@@ -29,7 +29,7 @@ SECRET_KEY =config("DJANGO_SECRET_KEY")
 #DEBUG = config("DJANGO_DEBUG",  cast=bool)
 DEBUG  = True
 print("DEBUG ", DEBUG, type(DEBUG))
-print("DJANGO_DEBUG raw:", config("DJANGO_DEBUG"))
+#print("DJANGO_DEBUG raw:", config("DJANGO_DEBUG"))
 
 
 
