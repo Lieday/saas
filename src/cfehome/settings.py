@@ -27,8 +27,8 @@ SECRET_KEY =config("DJANGO_SECRET_KEY")
 #DEBUG = str(os.environ.get("DJANGO_DEBUG")).lower() == "true"
 #DEBUG = config("DJANGO_DEBUG", cast=bool)
 #DEBUG = config("DJANGO_DEBUG", cast=bool)
-#DEBUG  = True
-DEBUG = config("DEBUG", default=False, cast=bool)
+DEBUG  = False
+#DEBUG = config("DEBUG", default=False, cast=bool)
 #print("DEBUG ", DEBUG, type(DEBUG))
 #print("DJANGO_DEBUG raw:", config("DJANGO_DEBUG"))
 
